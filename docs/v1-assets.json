@@ -1,0 +1,87 @@
+{
+  "release_url": "https://github.com/TeamWearFreedomProject/Pixel-Watch-2-Asteroid-OS-Beta/releases/tag/V1",
+  "tag": "V1",
+  "release_id": 418054459,
+  "inspection_date": "2026-10-20",
+  "timezone": "Asia/Tokyo",
+  "source_build_revision": "UNKNOWN_NOT_RECORDED_IN_RELEASE",
+  "assets": [
+    {
+      "name": "asteroid-image-aurora.rootfs-20261005064926.ext4",
+      "bytes": 1441935360,
+      "sha256": "a4b1689a01e8158dd65e748c0f13a632253d2b040bc5cda912210ce3c1bda6ef",
+      "asset_id": 658414969,
+      "download_url": "https://github.com/TeamWearFreedomProject/Pixel-Watch-2-Asteroid-OS-Beta/releases/download/V1/asteroid-image-aurora.rootfs-20261005064926.ext4",
+      "download_sha256_verified": true
+    },
+    {
+      "name": "boot.img",
+      "bytes": 29319168,
+      "sha256": "5352cc2831215084c24e3ec7a3c025ac3863bc8191b65da33a09adf159fb9a56",
+      "asset_id": 658414505,
+      "download_url": "https://github.com/TeamWearFreedomProject/Pixel-Watch-2-Asteroid-OS-Beta/releases/download/V1/boot.img",
+      "download_sha256_verified": true
+    },
+    {
+      "name": "init_boot.img",
+      "bytes": 3796992,
+      "sha256": "acfda976ea8da2e3b624d459c78bfc79442203548d4851c89af55d56287613b9",
+      "asset_id": 658414695,
+      "download_url": "https://github.com/TeamWearFreedomProject/Pixel-Watch-2-Asteroid-OS-Beta/releases/download/V1/init_boot.img",
+      "download_sha256_verified": true
+    },
+    {
+      "name": "vendor_kernel_boot.img",
+      "bytes": 8093696,
+      "sha256": "846761f9b420945a656994049bdfabec0df0759ab6b68ed02ec5e7734d8b85bc",
+      "asset_id": 658414922,
+      "download_url": "https://github.com/TeamWearFreedomProject/Pixel-Watch-2-Asteroid-OS-Beta/releases/download/V1/vendor_kernel_boot.img",
+      "download_sha256_verified": true
+    }
+  ],
+  "observed": {
+    "os": "AsteroidOS 2.2-nightly",
+    "build_id": "20261005064926",
+    "kernel": "5.15.144",
+    "kernel_arch": "aarch64",
+    "userspace": "ARM32 hard-float glibc",
+    "qt_major": 6,
+    "opkg_binary_present": true,
+    "vendor_ramdisk_module_count": 141,
+    "key_modules": [
+      "msm_drm.ko",
+      "touch_nt38350.ko",
+      "google-battery.ko",
+      "google-charger.ko",
+      "qpnp-smblite-main.ko"
+    ],
+    "rootfs_locations_searched_by_init": [
+      "/sdcard/asteroidos.ext4",
+      "/sdcard/media/0/asteroidos.ext4",
+      "/sdcard/media/asteroidos.ext4"
+    ],
+    "userdata_partition_config": "/dev/mmcblk0p82",
+    "userdata_fsck_and_rw_mount": true,
+    "android_super_device_config": "/dev/mmcblk0p80",
+    "android_mappings": "hardcoded slot-B dm-linear offsets",
+    "sound_kernel_enabled": true,
+    "audio_modules_autoloaded": true,
+    "pulseaudio_user_service_enabled": true,
+    "adb_debugging_flag_present": true,
+    "automatic_90_second_fastboot_return": "NOT_PRESENT_IN_INSPECTED_INIT"
+  },
+  "hardware_test": {
+    "performed_by_assistant": false,
+    "release_author_claims": "割と不安定です。例えば常時表示が使えなかったりします。wifiなどは通常使用できます。",
+    "display_touch_on_current_watch": "NOT_YET_CONFIRMED",
+    "current_super_layout_match": "NOT_VERIFIED"
+  },
+  "migration_requirements": [
+    "Verify current partition/super mapping before booting the unmodified init path",
+    "Retain physical shell access compatible with restricted Windows PC",
+    "Disable speaker/audio path in the derivative",
+    "Keep kernel and module ABI paired; do not copy Buildroot 5.15.137 modules",
+    "Identify reproducible source/layer revisions before rebuilding"
+  ],
+  "method": "Offline hashes, Android boot headers, decompressed initramfs, embedded kernel config and read-only debugfs; no watch writes or image modifications"
+}
